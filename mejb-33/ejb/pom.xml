@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>pom</artifactId>
+    <groupId>dk.lenio.maven.ejb.client</groupId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>dk.lenio.maven.ejb.client</groupId>
+  <artifactId>ejb</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <name>ejb</name>
+  <packaging>ejb</packaging>
+  <dependencies>
+<!-- Metro -->
+    <dependency>
+      <groupId>com.sun.xml.ws</groupId>
+      <artifactId>webservices-rt</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml</groupId>
+      <artifactId>webservices-api</artifactId>
+      <version>2.0</version>
+    </dependency>
+<!-- JBOSS EJB Client-->
+    <dependency>
+     <groupId>org.apache.geronimo.specs</groupId>
+     <artifactId>geronimo-ejb_3.1_spec</artifactId>
+      <scope>provided</scope>
+    </dependency>
+<!-- OTHER -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+<!-- BUILD -->
+  <build>
+    <finalName>ejb</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <configuration>
+          <ejbVersion>3.0</ejbVersion>
+          <generateClient>true</generateClient>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
