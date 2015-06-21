@@ -30,9 +30,6 @@
       </resource>
       <resource>
         <directory>src/main/conf</directory>
-        <includes>
-          <include>**</include>
-        </includes>
         <targetPath>${project.build.directory}/conf</targetPath>
       </resource>
     </resources>
