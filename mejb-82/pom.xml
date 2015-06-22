@@ -37,7 +37,7 @@
       <plugins>
         <plugin>
           <artifactId>maven-ejb-plugin</artifactId>
-          <version>2.5.1</version>
+          <version>2.5.2-SNAPSHOT</version>
           <executions>
             <execution>
               <id>first</id>
@@ -45,7 +45,8 @@
                 <goal>ejb</goal>
               </goals>
               <configuration>
-                <ejbJar>${project.build.directory}/conf/first/ejb-jar.xml</ejbJar>
+                <sourceDirectory>${project.build.directory}/conf</sourceDirectory>
+                <ejbJar>first/ejb-jar.xml</ejbJar>
                 <classifier>first</classifier>
               </configuration>
             </execution>
@@ -55,7 +56,8 @@
                 <goal>ejb</goal>
               </goals>
               <configuration>
-                <sourceDirectory>${project.build.directory}/conf/second/ejb-jar.xml</sourceDirectory>
+                <sourceDirectory>${project.build.directory}/conf</sourceDirectory>
+                <ejbJar>second/ejb-jar.xml</ejbJar>
                 <classifier>second</classifier>
               </configuration>
             </execution>
@@ -65,7 +67,8 @@
                 <goal>ejb</goal>
               </goals>
               <configuration>
-                <sourceDirectory>${project.build.directory}/conf/third/ejb-jar.xml</sourceDirectory>
+                <sourceDirectory>${project.build.directory}/conf</sourceDirectory>
+                <ejbJar>third/ejb-jar.xml</ejbJar>
                 <classifier>third</classifier>
               </configuration>
             </execution>
