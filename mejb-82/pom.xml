@@ -8,7 +8,7 @@
   <packaging>ejb</packaging>
 
   <name>mejb-82</name>
-  <url>https://jira.codehaus.org/browse/MEJB-82</url>
+  <url>https://issues.apache.org/jira/browse/MEJB-82</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,20 +24,13 @@
   </dependencies>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <resource>
-        <directory>src/main/conf</directory>
-        <targetPath>${project.build.directory}/conf</targetPath>
-      </resource>
-    </resources>
-    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-ejb-plugin</artifactId>
-          <version>2.5.2-SNAPSHOT</version>
+          <!--
+             ! Replace with current version
+          <version>@project.version@</version>
+          -->
           <executions>
             <execution>
               <id>first</id>
@@ -45,8 +38,7 @@
                 <goal>ejb</goal>
               </goals>
               <configuration>
-                <sourceDirectory>${project.build.directory}/conf</sourceDirectory>
-                <ejbJar>first/ejb-jar.xml</ejbJar>
+                <sourceDirectory>src/main/conf/first</sourceDirectory>
                 <classifier>first</classifier>
               </configuration>
             </execution>
@@ -56,8 +48,7 @@
                 <goal>ejb</goal>
               </goals>
               <configuration>
-                <sourceDirectory>${project.build.directory}/conf</sourceDirectory>
-                <ejbJar>second/ejb-jar.xml</ejbJar>
+                <sourceDirectory>src/main/conf/second</sourceDirectory>
                 <classifier>second</classifier>
               </configuration>
             </execution>
@@ -67,15 +58,13 @@
                 <goal>ejb</goal>
               </goals>
               <configuration>
-                <sourceDirectory>${project.build.directory}/conf</sourceDirectory>
-                <ejbJar>third/ejb-jar.xml</ejbJar>
+                <sourceDirectory>src/main/conf/third</sourceDirectory>
                 <classifier>third</classifier>
               </configuration>
             </execution>
           </executions>
         </plugin>
       </plugins>
-    </pluginManagement>
   </build>
 
 </project>
